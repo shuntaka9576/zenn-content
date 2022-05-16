@@ -36,6 +36,11 @@ Release:        10
 Codename:       buster
 ```
 
+```bash
+$ litestream version
+v0.3.8
+```
+
 # 設定
 
 ## systemdの設定
@@ -82,7 +87,7 @@ AWS_DEFAULT_REGION=
 
 
 :::details SQLiteのデータベース、テーブル作成コード
-```sqlite3
+```sql
 sqlite3 test.db
 CREATE TABLE HealthCheck (id INTEGER PRIMARY KEY,created_at TEXT DEFAULT CURRENT_TIMESTAMP);
 select id,datetime(created_at, '+9 hours') from HealthCheck;
@@ -604,3 +609,12 @@ sqlite> select count(*) from HealthCheck ;
 # さいごに
 
 当然ではありますが、期限付きのクレデンシャルでも何事もなく、レプリケートできました。Litestream楽しいですね！
+
+# 追記
+
+:::message
+以降は、推測を多く含みます。後ほど実際のコードを読んで確認次第、追記しようと思います。
+:::
+
+* `retention` `snapshot-interval`は、起動時点から計測しているようで本記事のように定期的に再起動する環境下では、設定値を再起動時間以下にしないと意図通りWALファイルのローテートやスナップショットが作成されないようです。
+
