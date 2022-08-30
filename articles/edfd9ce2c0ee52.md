@@ -34,19 +34,18 @@ github extensions install {オーナー名}/{リポジトリ名}
 
 ![img](https://github.com/shuntaka9576/gh-p2/blob/main/doc/gif/p2.gif?raw=true)
 
-# 利用方法
+
+# インストール方法
 
 ツールは以下に公開しております。
 
 https://github.com/shuntaka9576/gh-p2
 
-## インストール方法
-
-### GitHub CLIの導入
+## GitHub CLIの導入
 
 GitHub CLIを導入してない方は、[公式ドキュメント](https://cli.github.com/manual/installation)を参考に導入してください。
 
-### projectsのscopeの追加
+## projectsのscopeの追加
 
 GitHub CLIのデフォルトのscopeだと権限が足りないため、権限を追加します。
 
@@ -54,7 +53,7 @@ GitHub CLIのデフォルトのscopeだと権限が足りないため、権限�
 gh auth login --scopes 'project'
 ```
 
-### gh-p2の導入
+## gh-p2の導入
 
 拡張を導入します。
 
@@ -64,9 +63,9 @@ gh extension install shuntaka9576/gh-p2
 
 ※ 初回実行時は、バイナリインストールため遅い場合はがあります。
 
-## 使い方
+# 使い方
 
-### 必須オプション解説
+## 必須オプション解説
 
 詳細は[README](https://github.com/shuntaka9576/gh-p2/blob/main/README.md#usage)を参考にしてください。本記事ではQuick start的な内容を書いていきます。
 
