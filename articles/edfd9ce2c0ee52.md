@@ -14,7 +14,7 @@ published: true
 
 業務やプライベートで、少し特殊な方法でGitHub Projectsを運用しており、GitHub Projectsに直接issueを追加したいと思うことが多々ありました。
 
-詳細は割愛しますが、運用を簡単に説明しますと、プランニングでGoogle Sheetsを用いてタスクや見積もりを整理/調整し、issueを作成、GitHub Projectsへ追加を行なっていました。これらの作業を簡単にするために、GitHub CLI拡張を作成しました。
+詳細は割愛しますが、運用を簡単に説明しますと、プランニングでGoogle Sheetsを用いてタスクや見積もりを整理/調整し、一括でissueを作成、GitHub Projectsへ追加を行っていました。これらの作業を簡単にするために、GitHub CLI拡張を作成しました。
 
 # GitHub CLIの拡張について
 
@@ -118,7 +118,7 @@ gh p2 create -u "shuntaka9576" \
 
 ここから先は、issueを作成するかdraft issueを作成するかで指定するオプションが異なります。
 
-### issueを作成する
+## issueを作成する
 
 issueを作成したいリポジトリを`-r`オプションで指定します。
 
@@ -185,7 +185,7 @@ gh p2 create -u "shuntaka9576" \
   -d
 ```
 
-# 利用技術 
+# 利用技術や参考にした内容
 Go言語で書きました。CLIライブラリは、[alecthomas/kong](https://github.com/alecthomas/kong)を利用しています。他にも気になるところがあればリポジトリの中身を参照してください。
 
 https://github.com/shuntaka9576/gh-p2
@@ -201,12 +201,28 @@ https://zenn.dev/hsaki/articles/github-graphql
 
 Projects(classic)は[TUI](https://github.com/shuntaka9576/kanban)を作ったことがあるのですが、ProjectV2はカスタムフィールドのStausがカンバンの列に該当するため、かなり取り回しが楽でした。
 
+
 # 今後
 
 * issueのbodyを設定可能にする
 * カスタムフィールドのiterationタイプ対応
 * GitHub API呼び出し周りの最適化(少しissue作成が遅い)
 
+# 開発時によく参照したドキュメント
+
+## [GraphQL API仕様書](https://docs.github.com/en/graphql/reference/objects#projectv2)
+
+MutationやQueryの利用方法の確認に利用します。
+
+## [REST API仕様書](https://docs.github.com/en/rest/overview/endpoints-available-for-github-apps)
+GraphQL APIでは対応できないケースが多々存在するので、REST APIも併用するのが良いです。`gh-p2`では、labelの作成や取得はREST APIを利用しています。
+
+## [GitHub CLI extensions作成方法](https://docs.github.com/ja/github-cli/github-cli/creating-github-cli-extensions)
+1回読めば良い感じだと思います。
+
+
 # 最後に
 
 ニッチなツールですが、同じような問題がある方がいれば使ってみてください。
+この手のツールを作る際に、直接GitHub APIを叩くことは以後ないだろうと思えるくらいにGitHub CLI周りのエコシステムが整っていることが分かりました。基本的には`gh api` `gh api graphql` コマンドで代用可能です。また、REST API仕様書には、GitHub CLIの実行方法が掲載されているので、調査しやすいです。
+
