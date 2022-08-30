@@ -2,7 +2,7 @@
 title: "GitHub Projectsへ簡単にissueを作成、追加するGitHub CLI拡張を作った"
 emoji: "✨"
 type: "tech"
-topics: ["go", "githubcli"]
+topics: ["go", "githubcli", "githubprojects"]
 published: true
 ---
 
