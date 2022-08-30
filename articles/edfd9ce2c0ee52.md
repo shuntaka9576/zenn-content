@@ -12,7 +12,7 @@ published: true
 
 # はじめに
 
-業務やプライベートで、少し特殊な方法でGitHub Projectsを運用しており、GitHub Projectsに直接Issueを追加したいと思うことが多々ありました。
+業務やプライベートで、少し特殊な方法でGitHub Projectsを運用しており、GitHub Projectsに直接issueを追加したいと思うことが多々ありました。
 
 詳細は割愛しますが、運用を簡単に説明しますと、プランニングでGoogle Sheetsを用いてタスクや見積もりを整理/調整し、issueを作成、GitHub Projectsへ追加を行なっていました。これらの作業を簡単にするために、GitHub CLI拡張を作成しました。
 
