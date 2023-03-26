@@ -10,15 +10,16 @@ published: true
 
 ChatGPT流行っていますね。私はGPT-4が使えるようになってから触るようになりました。触っている過程でよりストレスなく使うにはターミナルから使えた方が良いと感じコマンドラインツールを作ることにしました。
 
-Web版のChatGPT(https://chat.openai.com)は便利ですが、以下の点で自分にあっていなかったです。
+Web版のChatGPT(https://chat.openai.com)は便利ですが、以下の点でもやもやがありました
 
 * ブラウザを開く必要がある
 * New Chatしすぎると整理が難しい
 * チャットの履歴を横断的に見ることが難しい(あいまい検索など)
 * ブラウザのエディタが使いにくい
 * 障害で2日程度チャットの履歴が見れない期間が存在した
+* API以外(ChatGPTとか)からの入力は学習用途に利用される^[[OpenAI の利用規約改定！！2023年3月1日更新 / API 経由は学習・訓練には使用されない。](https://note.com/tyaperujp01/n/nf35eef98039f)]
 
-ただこれらの点は今後改善されると思いますので、要は**趣味**です。
+ただこれらの点は一部今後改善されると思いますので、要は**趣味**です。
 
 ## リポジトリ
 
@@ -30,6 +31,8 @@ Web版のChatGPT(https://chat.openai.com)は便利ですが、以下の点で自
 
 * OpenAI APIのAPIキー
 * Vim/Neovimのような同期的に実行可能なエディタ(試していませんが多分Nanoも使えると思います)
+
+
 
 ## 導入方法
 
@@ -181,14 +184,14 @@ https://github.com/shuntaka9576/oax/blob/1f254be80695c9a82a53c489d8c657c9ab7ff7c
 
 git submoduleを使う場合は、`actions/checkout@v3`のsubmodulesオプションをtrueにする必要があります。
 https://github.com/shuntaka9576/oax/blob/1f254be80695c9a82a53c489d8c657c9ab7ff7c8/.github/workflows/release.yml#L12-L16
-### [bubbletea](https://github.com/charmbracelet/bubbletea)の採用検討と見送り。
+### [bubbletea](https://github.com/charmbracelet/bubbletea)の採用検討と見送り
 
 [bubbles](https://github.com/charmbracelet/bubbles)のtextareaとviewportを使って、[bubblesのサンプル](https://github.com/charmbracelet/bubbletea/blob/master/examples/chat/chat.gif)のようなUIを作る予定でしたが、実力不足で見送りになりました。。
 
 * viewport
   * 1行の横幅が長い場合に改行されない
   * 自動スクロールを別途実装する必要がある
-* 標準出力をbubbletea側で握られており、ステート管理が難しい
+* 標準出力をbubbletea側で握られており、今回の要件では逆に普通の標準出力できることをやろうとすると別途実装が必要だった
 
 より研究して使いこなせるようにしていきたいです。
 
@@ -202,4 +205,16 @@ https://github.com/shuntaka9576/oax/blob/1f254be80695c9a82a53c489d8c657c9ab7ff7c
 * 他のOpen AIのAPIで便利そうな機能の導入
 
 多分公式からもっとすごいやつが出る気がしますが、薄く簡単に使えるツールとして差別化して改善しようと思います、、
+
+
+## さいごに
+
+OpenAIのAPIは従量課金だからChatGPT Plusサブスクとは別に費用かかるし、Web版が費用面ではよいのでは？
+
+https://shs.sh/
+
+:::message
+
+> 18ドルを超えた利用をする際に，支払い登録をする時が来ると思いますが，この時，トライアルの18ドル分も支払い対象になります^[[ChatGPTの料金が複雑すぎる](https://zenn.dev/bolmatu/articles/4cacb9072750fe#api%E3%81%A7%E3%81%AEchatgpt%E5%88%A9%E7%94%A8)]
+:::
 
