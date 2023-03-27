@@ -65,42 +65,36 @@ brew install shuntaka9576/tap/oax
 
 ```toml:チャット履歴ファイル
 [[messages]]
-  sequentialNumber = 0 # 順番
   role = "user"
   content = '''
 しりとりしよう
 '''
 
 [[messages]]
-  sequentialNumber = 1
   role = "assistant"
   content = '''
 りんご
 '''
 
 [[messages]]
-  sequentialNumber = 2
   role = "user"
   content = '''
 ゴリら
 '''
 
 [[messages]]
-  sequentialNumber = 3
   role = "assistant"
   content = '''
 らくだ
 '''
 
 [[messages]]
-  sequentialNumber = 4
   role = "user"
   content = '''
 だんご
 '''
 
 [[messages]]
-  sequentialNumber = 5
   role = "assistant"
   content = '''
 ごま油
