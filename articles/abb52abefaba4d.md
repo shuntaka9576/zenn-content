@@ -1,5 +1,5 @@
 ---
-title: "ChatGPTをターミナルから使うコマンドラインツールを作った"
+title: "ChatGPTをターミナルから使うコマンドラインツール(CLI)を作った"
 emoji: "💥"
 type: "tech"
 topics: ["chatgpt", "openai", "openaiapi", "go"]
