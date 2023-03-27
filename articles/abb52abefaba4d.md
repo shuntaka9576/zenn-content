@@ -10,6 +10,9 @@ published: true
 
 ChatGPT流行っていますね。私はGPT-4が使えるようになってから触るようになりました。触っている過程でよりストレスなく使うにはターミナルから使えた方が良いと感じコマンドラインツールを作ることにしました。
 
+実際の操作感は以下ようなイメージです。
+![gif](https://res.cloudinary.com/dkerzyk09/image/upload/v1679945948/tools/oax/oax-chat_0.0.3.gif)
+
 Web版のChatGPT(https://chat.openai.com)は便利ですが、以下の点でもやもやがありました
 
 * ブラウザを開く必要がある
@@ -21,6 +24,9 @@ Web版のChatGPT(https://chat.openai.com)は便利ですが、以下の点でも
 * 使い方によっては、ChatGPT Plusのサブスクより、従量の方が安い場合がありえる
 
 ただこれらの点は一部今後改善されると思いますので、要は**趣味**です。
+
+
+
 
 ## リポジトリ
 
@@ -59,7 +65,7 @@ brew install shuntaka9576/tap/oax
 ### 新規でチャットをする場合
 
 チャット履歴は`~/.config/oax/chat-log`に保存されます。チャット履歴のファイルはTOMLファイルです。
-![gif](https://res.cloudinary.com/dkerzyk09/image/upload/v1679860503/tools/oax/oax-chat.gif)
+![gif](https://res.cloudinary.com/dkerzyk09/image/upload/v1679945948/tools/oax/oax-chat_0.0.3.gif)
 
 チャット履歴ファイルは以下のような形式で、role="user"が質問者でrole="assistant"がChatGPTからの回答です。messages配列が全てOpenAIのAPIに送信されるので、コンテキストに基づいた対話が可能です。
 
@@ -139,7 +145,7 @@ Flags:
 
 `-f`オプションでチャット履歴ファイルをフルパスで指定します。
 
-![gif](https://res.cloudinary.com/dkerzyk09/image/upload/v1679860850/tools/oax/chat-resume.gif)
+![gif](https://res.cloudinary.com/dkerzyk09/image/upload/v1679946265/tools/oax/oax-chat-resume_0.0.3.gif)
 
 
 ## 技術
