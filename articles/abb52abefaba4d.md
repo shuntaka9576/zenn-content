@@ -18,6 +18,7 @@ Web版のChatGPT(https://chat.openai.com)は便利ですが、以下の点でも
 * ブラウザのエディタが使いにくい
 * 障害で2日程度チャットの履歴が見れない期間が存在した
 * API以外(ChatGPTとか)からの入力は学習用途に利用される^[[OpenAI の利用規約改定！！2023年3月1日更新 / API 経由は学習・訓練には使用されない。](https://note.com/tyaperujp01/n/nf35eef98039f)]
+* 使い方によっては、ChatGPT Plusのサブスクより、従量の方が安い場合がありえる
 
 ただこれらの点は一部今後改善されると思いますので、要は**趣味**です。
 
@@ -207,14 +208,4 @@ https://github.com/shuntaka9576/oax/blob/1f254be80695c9a82a53c489d8c657c9ab7ff7c
 多分公式からもっとすごいやつが出る気がしますが、薄く簡単に使えるツールとして差別化して改善しようと思います、、
 
 
-## さいごに
-
-OpenAIのAPIは従量課金だからChatGPT Plusサブスクとは別に費用かかるし、Web版が費用面ではよいのでは？
-
-https://shs.sh/
-
-:::message
-
-> 18ドルを超えた利用をする際に，支払い登録をする時が来ると思いますが，この時，トライアルの18ドル分も支払い対象になります^[[ChatGPTの料金が複雑すぎる](https://zenn.dev/bolmatu/articles/4cacb9072750fe#api%E3%81%A7%E3%81%AEchatgpt%E5%88%A9%E7%94%A8)]
-:::
 
