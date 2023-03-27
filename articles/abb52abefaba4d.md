@@ -54,14 +54,14 @@ brew install shuntaka9576/tap/oax
 
 詳細は[README.md](https://github.com/shuntaka9576/oax#readme)を参照してください。
 
-## 使用感
+## チャット機能
 
-### 新規でチャットをする場合
+### 新規でチャットする場合
 
-チャット履歴は`~/.config/oax/chat-log`に保存されます。チャット履歴のファイルはTOMLファイルです。
+新規でチャットを開始すると、TOML形式のチャット履歴ファイルが作成されます。チャット履歴ファイルは`~/.config/oax/chat-log`に保存されます。
 ![gif](https://res.cloudinary.com/dkerzyk09/image/upload/v1679945948/tools/oax/oax-chat_0.0.3.gif)
 
-チャット履歴ファイルは以下のような形式で、role="user"が質問者でrole="assistant"がChatGPTからの回答です。messages配列が全てOpenAIのAPIに送信されるので、コンテキストに基づいた対話が可能です。
+チャット履歴ファイルは以下のような形式で、role="user"が質問者でrole="assistant"がChatGPTからの回答です。messages配列が全てOpenAIのAPIに送信されるので、コンテキストに基づいたチャットが可能です。
 
 ```toml:チャット履歴ファイル
 [[messages]]
@@ -81,25 +81,6 @@ brew install shuntaka9576/tap/oax
   content = '''
 ゴリら
 '''
-
-[[messages]]
-  role = "assistant"
-  content = '''
-らくだ
-'''
-
-[[messages]]
-  role = "user"
-  content = '''
-だんご
-'''
-
-[[messages]]
-  role = "assistant"
-  content = '''
-ごま油
-'''
-
 ```
 
 チャット履歴を保存するパスを変更することも可能です。例えば`ghq`を使っている場合は、`~/repos/github.com/{OWNER名}/chat-log`を指定することでGit管理下にチャット履歴を管理できます。変更方法は以下の通りです。
@@ -135,11 +116,56 @@ Flags:
 ```
 
 
-### 途中からチャットを再開する場合
+### チャットを再開する場合
 
 `-f`オプションでチャット履歴ファイルをフルパスで指定します。
 
 ![gif](https://res.cloudinary.com/dkerzyk09/image/upload/v1679946265/tools/oax/oax-chat-resume_0.0.3.gif)
+
+### テンプレート機能
+
+chat機能は、設定ファイルを編集することで便利に扱えるようになります。
+
+```bash
+oax config --settings
+```
+
+```toml:~/.config/oax/settings.toml
+[chat]
+  # デフォルトで指定するモデルの設定(-mオプションでモデルを指定した場合はオプション優先)
+  model = "gpt-3.5-turbo"
+
+  # 新規でチャットを開始する際の会話テンプレートの設定
+  [[chat.templates]]
+    name = "friends"
+
+    [[chat.templates.messages]]
+      role = "system"
+      content = "You are ChatGPT, a large language model trained by OpenAI. You are a friendly assistant that can provide help, advice, and engage in casual conversations."
+```
+
+以下のように`-t`コマンドでテンプレート名を指定して実行します。
+```bash
+oax chat -t friends
+```
+
+チャット履歴ファイルに指定したテンプレートの内容が挿入されて生成されます。
+
+```toml
+[[messages]] # <-- 挿入される
+  role = "system"
+  content = '''
+You are ChatGPT, a large language model trained by OpenAI. You are a friendly assistant that can provide help, advice, and engage in casual conversations.
+'''
+
+[[messages]]
+  role = "user"
+  content = '''
+# Remove this comment and specify content to send to OpenAI API; otherwise, nothing is sent.
+'''
+
+```
+
 
 
 ## 技術
