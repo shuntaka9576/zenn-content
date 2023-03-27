@@ -202,6 +202,7 @@ https://github.com/shuntaka9576/oax/blob/1f254be80695c9a82a53c489d8c657c9ab7ff7c
 
 * モデル指定のデフォルト設定を設定ファイルに外だしする
 * chat.openai.comのような会話履歴内容からタイトル要約し会話履歴ファイル名として保存する
+* テンプレート機能
 * Windows対応(やりかけになっている、、)
 * 他のOpen AIのAPIで便利そうな機能の導入
 
