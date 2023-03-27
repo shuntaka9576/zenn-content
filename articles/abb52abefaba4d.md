@@ -25,20 +25,14 @@ Web版のChatGPT(https://chat.openai.com)は便利ですが、以下の点でも
 
 ただこれらの点は一部今後改善されると思いますので、要は**趣味**です。
 
-
-
-
 ## リポジトリ
 
-リポジトリは、[github.com/shuntaka9576/oax](https://github.com/shuntaka9576/oax)です。ツール名は、`oax`(OpenAI eXecutor)です。以下の画像が名付け親です。
-
-![image](https://user-images.githubusercontent.com/12817245/226498673-90482fea-6ddc-4057-8ebe-7191f171cc4d.png)
+リポジトリは、[github.com/shuntaka9576/oax](https://github.com/shuntaka9576/oax)です。ツール名は、`oax`(OpenAI eXecutor)です。
 
 ## 必要なもの
 
 * OpenAI APIのAPIキー
 * Vim/Neovimのような同期的に実行可能なエディタ(試していませんが多分Nanoも使えると思います)
-
 
 
 ## 導入方法
