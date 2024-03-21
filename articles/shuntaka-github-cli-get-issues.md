@@ -3,7 +3,7 @@ title: "GitHub Projectsに紐づくIssue一覧を取得する"
 emoji: "✨"
 type: "tech"
 topics: ["go", "githubcli", "githubprojects"]
-published: false
+published: true
 ---
 
 
