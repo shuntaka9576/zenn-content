@@ -3,7 +3,7 @@ title: "tmuxとAIエージェント(CLI)を管理するメニューバーアプ�
 emoji: "🍞"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["tmux", "claudecode", "opencode", "codex"]
-published: false
+published: true
 ---
 
 ## はじめに
