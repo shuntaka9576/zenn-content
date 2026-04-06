@@ -20,12 +20,13 @@ https://github.com/shuntaka9576/agentoast
 
 自分はWezterm + tmux + lazygit + neovimでコードベースごとにtmuxセッションを立て、そこでエージェントを動かしています。エージェントの終了を見逃すケースがあったため、tmuxセッションとコーディングエージェントを管理するメニューバーアプリを作るきっかけになりました。
 
-インストールはbrewが推奨です。CLIとmacOSアプリ(menubarアプリ)があり、両方必要です。インストール方法の詳細は[Installation](https://github.com/shuntaka9576/agentoast?tab=readme-ov-file#installation)に記載しています。簡単に説明すると以下です。
+インストールはbrewが推奨です。インストール方法の詳細は[Installation](https://github.com/shuntaka9576/agentoast?tab=readme-ov-file#installation)に記載しています。簡単に説明すると以下です。
+
+:::message
+v0.29.0 以降、CLIとmacOSアプリは単一バイナリに統合されました。Caskのインストールだけで`agentoast`コマンドも使えます。それ以前のバージョンで`agentoast-cli`をインストール済みの場合は`brew uninstall agentoast-cli`で削除してください。
+:::
 
 ```bash
-# CLI
-brew install shuntaka9576/tap/agentoast-cli
-# menubar アプリ
 brew install --cask shuntaka9576/tap/agentoast
 
 # 起動時GUIは出ず、メニューバーにトーストにお化けがいるアイコンが表示されます。右クリック > Quit で停止できます。
